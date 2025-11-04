@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\File\\Demo\\DemoMvc069\\DemoMvc069.csproj",
+      "projectUniqueName": "D:\\File\\PhatTrienPhanMemQuanLy\\DemoMvc069\\DemoMvc069.csproj",
       "projectName": "DemoMvc069",
-      "projectPath": "D:\\File\\Demo\\DemoMvc069\\DemoMvc069.csproj",
+      "projectPath": "D:\\File\\PhatTrienPhanMemQuanLy\\DemoMvc069\\DemoMvc069.csproj",
       "packagesPath": "C:\\Users\\nguye\\.nuget\\packages\\",
-      "outputPath": "D:\\File\\Demo\\DemoMvc069\\obj\\",
+      "outputPath": "D:\\File\\PhatTrienPhanMemQuanLy\\DemoMvc069\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
