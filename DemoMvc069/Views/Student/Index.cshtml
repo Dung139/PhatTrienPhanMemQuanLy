@@ -1,0 +1,15 @@
+@{
+    ViewData["Title"] = "Bài thực hành Buổi 4";
+}
+<h1>Nguyễn Đình Dũng - 2121050069</h1>
+<h2>Buổi học số 4:</h2>
+<h1>Dữ liệu từ Controller gửi về là: @ViewBag.infoStudent</h1>
+<form asp-action="Index">
+    <label>Nhập mã nhân viên:</label>
+    <input type="text" name="StudentID" />
+    <lavel>Nhập họ tên:</label>
+    <input type="text" name="FullName" />
+    <label>Nhập địa chỉ:</label>
+    <input type="text" name="Class" />
+    <input type="submit" value="Gửi" />
+</form>
