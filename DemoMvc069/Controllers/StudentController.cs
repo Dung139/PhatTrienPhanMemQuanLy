@@ -11,7 +11,7 @@ namespace DemoMvc069.Controllers
         [HttpPost]
         public IActionResult Index(string StudentID, string FullName, string Class)
         {
-            string message = $"Mã sinh viên: {StudentID}, Họ tên: {FullName}, Lớp: {CLass}";
+            string message = $"Mã sinh viên: {StudentID}, Họ tên: {FullName}, Lớp: {Class}";
             ViewBag.Message = message;
             return View();
         }

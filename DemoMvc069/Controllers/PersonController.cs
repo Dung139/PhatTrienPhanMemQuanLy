@@ -1,20 +1,21 @@
+using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using DemoMvc069.Models;
 
-namespace DemoMvc069.Controllers
+namespace DemoMvc069.Controllers;
+public class PersonController : Controller
 {
-        public class PersonController : Controller
+    [HttpGet]
+    public IActionResult Index()
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
-        [HttpPost]
-        public IActionResult Index(string PersonId, string FullName, string Address)
-        {
-            string message = $"Mã nhân viên: {PersonId}, Họ tên: {FullName}, Địa chỉ: {Address}";
-            ViewBag.Message = message;
-            return View();
-        }
+        return View();
+    }
+    [HttpPost]
+    public IActionResult Index(Person ps)
+    {
+        string strOutput = $"Xin chào {ps.PersonID} - {ps.FullName} - {ps.Address}";
+
+        ViewBag.infoPerson = strOutput;
+        return View();
     }
 }
-
