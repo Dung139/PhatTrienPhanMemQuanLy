@@ -14,7 +14,21 @@ namespace DemoMvc069.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "9.0.0");
+            modelBuilder.HasAnnotation("ProductVersion", "10.0.1");
+
+            modelBuilder.Entity("DemoMvc069.Models.HeThongPhanPhoi", b =>
+                {
+                    b.Property<string>("MaHTPP")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TenHTPP")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("MaHTPP");
+
+                    b.ToTable("HeThongPhanPhoi");
+                });
 
             modelBuilder.Entity("DemoMvc069.Models.Person", b =>
                 {
@@ -25,6 +39,15 @@ namespace DemoMvc069.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasMaxLength(8)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("FullName")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -32,6 +55,26 @@ namespace DemoMvc069.Migrations
                     b.HasKey("PersonId");
 
                     b.ToTable("Person");
+
+                    b.HasDiscriminator().HasValue("Person");
+
+                    b.UseTphMappingStrategy();
+                });
+
+            modelBuilder.Entity("DemoMvc069.Models.Employee", b =>
+                {
+                    b.HasBaseType("DemoMvc069.Models.Person");
+
+                    b.Property<int>("Age")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("EmployeeId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.ToTable("Person");
+
+                    b.HasDiscriminator().HasValue("Employee");
                 });
 #pragma warning restore 612, 618
         }

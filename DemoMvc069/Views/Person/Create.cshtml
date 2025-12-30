@@ -1,16 +1,25 @@
 @model DemoMvc069.Models.Person
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Create Person";
 }
-<h1>Tạo mới Person</h1>
+
+<h1>Create</h1>
 
 <h4>Person</h4>
 <hr />
+    <form asp-action = "Upload" enctype="multipart/form-data">
+        <div class="row form-control">
+            <label class = "col-sm-2">Import data form excel:</label>
+            <input type="file" name="file" class="col-sm-4"/>
+            <input type="submit" value="Upload" class="btn btn-primary col-sm-1" />
+        </div>
+    </form>        
+<hr />    
+
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="PersonId" class="control-label"></label>
                 <input asp-for="PersonId" class="form-control" />
@@ -27,6 +36,11 @@
                 <span asp-validation-for="Address" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
@@ -35,7 +49,8 @@
 
 <div>
     <a asp-action="Index">Back to List</a>
-</div>
+</div>    
+
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
